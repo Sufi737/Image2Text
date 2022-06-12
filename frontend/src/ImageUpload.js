@@ -12,10 +12,12 @@ class ImageUpload extends React.Component {
         let file = this.state.file
         let formData = new FormData();
         formData.append('image', file)
-        console.log(file)
+        formData.append('selectedOptions', JSON.stringify(this.props.selectedOptions))
+        console.log(this.props.selectedOptions)
         axios({
             method: 'post',
-            url: 'http://localhost:8080/image/upload',
+            contentType: "application/json; charset=utf-8",
+            url: 'http://localhost:8080/image/extract',
             data: formData
         }).then(
             (res) => {

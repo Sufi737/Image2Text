@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import com.google.gson.Gson;
+
 import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
 
@@ -14,5 +16,10 @@ public class Config {
 	@Bean
 	public ITesseract TesseractService() {
 		return new Tesseract();
+	}
+	
+	@Bean
+	public Gson GsonService() {
+		return new Gson();
 	}
 }
