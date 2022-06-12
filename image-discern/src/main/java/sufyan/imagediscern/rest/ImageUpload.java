@@ -37,9 +37,9 @@ public class ImageUpload {
 			instance.setDatapath("/usr/share/tesseract-ocr/4.00/tessdata");
 			String result = instance.doOCR(bufferedImage);
 			System.out.println("OCR result: "+result);
+			return result;
 	    } catch (IOException e) {
 	        throw new RuntimeException(e);
 	    }
-		return "endpoint working";
 	}
 }
