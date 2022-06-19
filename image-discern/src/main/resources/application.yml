@@ -1,0 +1,4 @@
+DetectLanguage:
+   API_KEY: 1b34521dd471a0b45b7a751a6a428eb2
+   LANGUAGES_ENDPOINT: https://ws.detectlanguage.com/0.2/languages
+   REQUEST_TIMEOUT_DURATION_SECONDS: 5
