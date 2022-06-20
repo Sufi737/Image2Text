@@ -53,7 +53,7 @@ class App extends React.Component{
                 />
                 <Selector 
                   type="detect_language" 
-                  label={"Identify Language"} 
+                  label={"Identify Language(s)"} 
                   setSelectedValue={this.setSelectedValue}
                 />
                 <Selector 

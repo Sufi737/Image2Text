@@ -14,9 +14,6 @@ import net.sourceforge.tess4j.Tesseract;
 @Configuration
 @ComponentScan({"sufyan.imagediscern", "net.sourceforge.tess4j"})
 public class Config {
-	
-	@Value("${DetectLanguage.LANGUAGES_ENDPOINT}")
-	private String languageListEndpoint;
 
 	@Bean
 	public ITesseract TesseractService() {
@@ -26,11 +23,6 @@ public class Config {
 	@Bean
 	public Gson GsonService() {
 		return new Gson();
-	}
-	
-	@Bean
-	public WebClient detectLanguageClient() {
-	    return WebClient.create(languageListEndpoint);
 	}
 	
 }
