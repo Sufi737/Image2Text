@@ -21,7 +21,6 @@ class ImageUpload extends React.Component {
             data: formData
         }).then(
             (res) => {
-                console.log(res)
                 this.props.setResponse(res)
             }
         )
