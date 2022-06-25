@@ -5,6 +5,7 @@ import ShowImageText from './ShowImageText.js';
 import Selector from './Selector';
 import ShowUrls from './ShowUrls';
 import DetectedLanguages from './DetectedLanguages';
+import UploadButton from './UploadButton';
 
 class App extends React.Component{
 
@@ -15,6 +16,7 @@ class App extends React.Component{
         imageText: null,
         urlList: null,
         languages: null,
+        image: null,
         selectedValues: {
             "text": false,
             "url": false,
@@ -37,12 +39,16 @@ class App extends React.Component{
         copySelectedValues[type] = value
         this.setState({selectedValues: copySelectedValues})
     }
+
+    setImage = (uploadedImage) => {
+      this.setState({image: uploadedImage})
+    }
     
     render() {
         const imageText = this.state.imageText
         return (
             <div className="App">
-                <ImageUpload selectedOptions={this.state.selectedValues} setResponse={this.setResponse}/>
+                <ImageUpload  setImage={this.setImage}/>
                 <ShowImageText text={this.state.imageText}/>
                 <ShowUrls urlList={this.state.urlList}/>
                 <DetectedLanguages languages={this.state.languages}/>
@@ -60,10 +66,10 @@ class App extends React.Component{
                   label={"Identify Language(s)"} 
                   setSelectedValue={this.setSelectedValue}
                 />
-                <Selector 
-                  type="translate_to_eng" 
-                  label={"Translate to English"} 
-                  setSelectedValue={this.setSelectedValue}
+                <UploadButton 
+                  image={this.state.image} 
+                  selectedOptions={this.state.selectedValues} 
+                  setResponse={this.setResponse}
                 />
             </div>
         );

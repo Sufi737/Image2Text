@@ -1,4 +1,5 @@
 import React from "react";
+import './Selector.css';
 
 class Selector extends React.Component {
 
@@ -8,9 +9,12 @@ class Selector extends React.Component {
 
     render() {
         return <div>
-            <input type="checkbox" value="Extract text" onChange={(e) => this.handleSelectChange(e)}/>
             <label>{this.props.label}</label>
-        </div>
+            <label className="switch">
+                <input type="checkbox" onChange={(e) => this.handleSelectChange(e)}/>
+                <span className="slider round"></span>
+            </label>
+        </div> 
     }
 }
 
