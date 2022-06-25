@@ -35,6 +35,7 @@ public class ExtractDataFromImage implements ExtractData{
 		if (selectedOptions.get("url") && !text.isEmpty()) {
 			urls = urlService.extractUrls(text.get(0));
 		}
+		System.out.println(selectedOptions);
 		if (selectedOptions.get("detect_language") && !text.isEmpty()) {
 			detected_languages = detectLanguageService.detectLanguage(text.get(0));
 		}

@@ -20,8 +20,7 @@ class App extends React.Component{
         selectedValues: {
             "text": false,
             "url": false,
-            "translate_to_eng": false,
-            "detect_langauge": false
+            "detect_language": false
         }
       }
     }
