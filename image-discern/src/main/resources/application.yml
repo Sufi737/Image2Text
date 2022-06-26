@@ -4,3 +4,6 @@ DetectLanguage:
 spring:
    profiles:
       active: local
+      
+logging:
+   file.name: ${HOME}/spring-boot-project/image-discern/logs/system.log
