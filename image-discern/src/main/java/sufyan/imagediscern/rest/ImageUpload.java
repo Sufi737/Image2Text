@@ -23,7 +23,7 @@ import net.sourceforge.tess4j.TesseractException;
 import sufyan.imagediscern.services.ExtractData;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000", allowedHeaders = "*")
 @RequestMapping("/image")
 public class ImageUpload {
 	
