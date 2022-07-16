@@ -3,7 +3,22 @@ import axios from "axios";
 
 class UploadButton extends React.Component {
 
-    callUploadImageEndpoint = () => {
+    username = 'image-extract-info-user';
+    password = 'KA#$DlAQw^7d2eFOMetdd';
+
+    fetchJwtToken = async () => {
+        const {data} = await axios.post(
+            'http://localhost:8080/authenticate',
+            {
+                username: this.username,
+                password: this.password
+            }
+        );
+        return data.jwt;
+    }
+
+    processImage = async () => {
+        let jwtToken = await this.fetchJwtToken();
         let file = this.props.image
         let formData = new FormData();
         formData.append('image', file)
@@ -11,8 +26,7 @@ class UploadButton extends React.Component {
         console.log(this.props.selectedOptions)
         const config = {
             headers: {
-                "Origin": "http://localhost:3000",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJpbWFnZS1leHRyYWN0LWluZm8tdXNlciIsImV4cCI6MTY1Njg5ODAwNywiaWF0IjoxNjU2ODYyMDA3fQ.S-KF09ZqwURvbRucWerzX7PZOLlKUBKFzXzUkNRL6oU"
+                "Authorization": "Bearer "+jwtToken
             }
         }
         axios.post(
@@ -29,7 +43,7 @@ class UploadButton extends React.Component {
 
     render() {
         return <div>
-            <input type="submit" value="Upload" onClick={this.callUploadImageEndpoint}/>
+            <input type="submit" value="Upload" onClick={this.processImage}/>
         </div>
     }
 }
