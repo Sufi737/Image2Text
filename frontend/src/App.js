@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
-import ImageUpload from './ImageUpload.js';
-import ShowImageText from './ShowImageText.js';
-import Selector from './Selector';
-import ShowUrls from './ShowUrls';
-import DetectedLanguages from './DetectedLanguages';
-import UploadButton from './UploadButton';
+import { BrowserRouter as Router, Routes, Route}
+    from 'react-router-dom';
+
+import Home from './Home';
 
 class App extends React.Component{
 
@@ -44,34 +42,11 @@ class App extends React.Component{
     }
     
     render() {
-        const imageText = this.state.imageText
-        return (
-            <div className="App">
-                <ImageUpload  setImage={this.setImage}/>
-                <ShowImageText text={this.state.imageText}/>
-                <ShowUrls urlList={this.state.urlList}/>
-                <DetectedLanguages languages={this.state.languages}/>
-                <Selector type="text" 
-                  label={"Extract Text"} 
-                  setSelectedValue={this.setSelectedValue}
-                />
-                <Selector 
-                  type="url" 
-                  label={"Extract URL(s)"} 
-                  setSelectedValue={this.setSelectedValue}
-                />
-                <Selector 
-                  type="detect_language" 
-                  label={"Identify Language(s)"} 
-                  setSelectedValue={this.setSelectedValue}
-                />
-                <UploadButton 
-                  image={this.state.image} 
-                  selectedOptions={this.state.selectedValues} 
-                  setResponse={this.setResponse}
-                />
-            </div>
-        );
+        return <Router>
+          <Routes>
+              <Route exact path='/' element={<Home />} />
+          </Routes>
+        </Router>
     }
     
 }
