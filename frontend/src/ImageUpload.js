@@ -1,5 +1,4 @@
 import React from "react";
-import './ImageUpload.css';
 
 class ImageUpload extends React.Component {
 
@@ -10,8 +9,10 @@ class ImageUpload extends React.Component {
 
     render() {
       return <div className="image-upload">
-            <label>Upload Image</label>
-            <input type="file" id="image" name="image" onChange={(e) => this.handleFile(e)} />
+            <div id="image-upload-wrapper">
+                <label id="image-upload-label">Upload Image</label>
+                <input type="file" id="image" name="image" onChange={(e) => this.handleFile(e)} />
+            </div>
         </div>
     }
 }

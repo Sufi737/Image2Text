@@ -1,5 +1,4 @@
 import React from "react";
-import './Selector.css';
 
 class Selector extends React.Component {
 
