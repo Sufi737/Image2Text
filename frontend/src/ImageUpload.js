@@ -8,11 +8,9 @@ class ImageUpload extends React.Component {
     }
 
     render() {
-      return <div className="image-upload">
-            <div id="image-upload-wrapper">
-                <label id="image-upload-label">Upload Image</label>
-                <input type="file" id="image" name="image" onChange={(e) => this.handleFile(e)} />
-            </div>
+      return <div id="image-upload-wrapper">
+            <label id="image-upload-label">Upload Image</label>
+            <input type="file" id="image" name="image" onChange={(e) => this.handleFile(e)} />
         </div>
     }
 }

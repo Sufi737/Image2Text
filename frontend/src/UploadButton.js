@@ -42,7 +42,7 @@ class UploadButton extends React.Component {
     }
 
     render() {
-        return <div>
+        return <div id="upload-btn">
             <input type="submit" value="Upload" onClick={this.processImage}/>
         </div>
     }

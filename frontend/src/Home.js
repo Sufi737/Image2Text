@@ -46,31 +46,33 @@ class Home extends React.Component {
     render() {
         const imageText = this.state.imageText
         return (
-            <div className="main">
+            <div id="main">
                 <ContentHeader />
-                <ImageUpload  setImage={this.setImage}/>
-                    <ShowImageText text={this.state.imageText}/>
-                    <ShowUrls urlList={this.state.urlList}/>
-                    <DetectedLanguages languages={this.state.languages}/>
-                    <Selector type="text" 
-                      label={"Extract Text"} 
-                      setSelectedValue={this.setSelectedValue}
-                    />
-                    <Selector 
-                      type="url" 
-                      label={"Extract URL(s)"} 
-                      setSelectedValue={this.setSelectedValue}
-                    />
-                    <Selector 
-                      type="detect_language" 
-                      label={"Identify Language(s)"} 
-                      setSelectedValue={this.setSelectedValue}
-                    />
-                    <UploadButton 
-                      image={this.state.image} 
-                      selectedOptions={this.state.selectedValues} 
-                      setResponse={this.setResponse}
-                    />
+                <div id="image-upload">
+                  <ImageUpload  setImage={this.setImage}/>
+                  <ShowImageText text={this.state.imageText}/>
+                  <ShowUrls urlList={this.state.urlList}/>
+                  <DetectedLanguages languages={this.state.languages}/>
+                  <Selector type="text" 
+                    label={"Extract Text"} 
+                    setSelectedValue={this.setSelectedValue}
+                  />
+                  <Selector 
+                    type="url" 
+                    label={"Extract URL(s)"} 
+                    setSelectedValue={this.setSelectedValue}
+                  />
+                  <Selector 
+                    type="detect_language" 
+                    label={"Identify Language(s)"} 
+                    setSelectedValue={this.setSelectedValue}
+                  />
+                  <UploadButton 
+                    image={this.state.image} 
+                    selectedOptions={this.state.selectedValues} 
+                    setResponse={this.setResponse}
+                  />
+                </div>
             </div>
         );
     }

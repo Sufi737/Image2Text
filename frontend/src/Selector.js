@@ -7,12 +7,12 @@ class Selector extends React.Component {
     }
 
     render() {
-        return <div>
+        return <div className="selector">
             <label>{this.props.label}</label>
-            <label className="switch">
-                <input type="checkbox" onChange={(e) => this.handleSelectChange(e)}/>
+            <div className="switch_box box_1">
+                <input type="checkbox" class="switch_1" onChange={(e) => this.handleSelectChange(e)}/>
                 <span className="slider round"></span>
-            </label>
+            </div>
         </div> 
     }
 }
