@@ -1,5 +1,5 @@
 import React from "react";
-import ImageUpload from './ImageUpload.js';
+import DragDropFile from './ImageUpload.js';
 import ShowImageText from './ShowImageText.js';
 import Selector from './Selector';
 import ShowUrls from './ShowUrls';
@@ -40,6 +40,8 @@ class Home extends React.Component {
     }
 
     setImage = (uploadedImage) => {
+      console.log("setImage called")
+      console.log(uploadedImage)
       this.setState({image: uploadedImage})
     }
     
@@ -49,7 +51,7 @@ class Home extends React.Component {
             <div id="main">
                 <ContentHeader />
                 <div id="image-upload">
-                  <ImageUpload  setImage={this.setImage}/>
+                  <DragDropFile  setImage={this.setImage}/>
                   <ShowImageText text={this.state.imageText}/>
                   <ShowUrls urlList={this.state.urlList}/>
                   <DetectedLanguages languages={this.state.languages}/>
