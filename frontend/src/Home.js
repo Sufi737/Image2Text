@@ -21,7 +21,8 @@ class Home extends React.Component {
             "text": false,
             "url": false,
             "detect_language": false
-        }
+        },
+        showingResponse: false
       }
     }
 
@@ -31,6 +32,9 @@ class Home extends React.Component {
             urlList: responseObject.data.url,
             languages: responseObject.data.detected_languages.join(",")
         })
+        if (responseObject.status) {
+            this.setState({showingResponse: true})
+        }
     }
 
     setSelectedValue = (type, value) => {
@@ -40,43 +44,47 @@ class Home extends React.Component {
     }
 
     setImage = (uploadedImage) => {
-      console.log("setImage called")
-      console.log(uploadedImage)
       this.setState({image: uploadedImage})
     }
     
     render() {
         const imageText = this.state.imageText
-        return (
-            <div id="main">
-                <ContentHeader />
-                <div id="image-upload">
-                  <DragDropFile  setImage={this.setImage}/>
-                  <ShowImageText text={this.state.imageText}/>
-                  <ShowUrls urlList={this.state.urlList}/>
-                  <DetectedLanguages languages={this.state.languages}/>
-                  <Selector type="text" 
-                    label={"Extract Text"} 
-                    setSelectedValue={this.setSelectedValue}
-                  />
-                  <Selector 
-                    type="url" 
-                    label={"Extract URL(s)"} 
-                    setSelectedValue={this.setSelectedValue}
-                  />
-                  <Selector 
-                    type="detect_language" 
-                    label={"Identify Language(s)"} 
-                    setSelectedValue={this.setSelectedValue}
-                  />
-                  <UploadButton 
-                    image={this.state.image} 
-                    selectedOptions={this.state.selectedValues} 
-                    setResponse={this.setResponse}
-                  />
-                </div>
-            </div>
-        );
+        if (this.state.showingResponse) {
+          return <div id="main">
+            <ShowImageText text={this.state.imageText}/>
+            <ShowUrls urlList={this.state.urlList}/>
+            <DetectedLanguages languages={this.state.languages}/>
+          </div>
+        } else {
+            return (
+              <div id="main">
+                  <ContentHeader />
+                  <div id="image-upload">
+                    <DragDropFile  setImage={this.setImage}/>
+                    <Selector type="text" 
+                      label={"Extract Text"} 
+                      setSelectedValue={this.setSelectedValue}
+                    />
+                    <Selector 
+                      type="url" 
+                      label={"Extract URL(s)"} 
+                      setSelectedValue={this.setSelectedValue}
+                    />
+                    <Selector 
+                      type="detect_language" 
+                      label={"Identify Language(s)"} 
+                      setSelectedValue={this.setSelectedValue}
+                    />
+                    <UploadButton 
+                      image={this.state.image} 
+                      selectedOptions={this.state.selectedValues} 
+                      setResponse={this.setResponse}
+                    />
+                  </div>
+              </div>
+            );
+        }
+        
     }
 }
 

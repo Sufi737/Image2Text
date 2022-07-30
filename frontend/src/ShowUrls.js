@@ -11,7 +11,7 @@ class ShowUrls extends React.Component {
         let urlList = this.props.urlList;
         if (urlList) {
             return <table border="1px solid black">
-                {this.props.urlList.map(this.renderRow)}
+                <tbody>{this.props.urlList.map(this.renderRow)}</tbody>
             </table>
         }
     }

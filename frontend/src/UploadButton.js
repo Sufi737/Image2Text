@@ -30,7 +30,6 @@ class UploadButton extends React.Component {
         let formData = new FormData();
         formData.append('image', file)
         formData.append('selectedOptions', JSON.stringify(this.props.selectedOptions))
-        console.log(this.props.selectedOptions)
         const config = {
             headers: {
                 "Authorization": "Bearer "+jwtToken
@@ -42,7 +41,6 @@ class UploadButton extends React.Component {
             config
         ).then(
             (res) => {
-                console.log(res);
                 this.props.setResponse(res)
             }
         )
@@ -60,7 +58,6 @@ class UploadButton extends React.Component {
                 </div>
             </div>    
         }
-        
     }
 }
 
