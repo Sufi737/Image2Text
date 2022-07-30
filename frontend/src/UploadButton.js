@@ -3,6 +3,13 @@ import axios from "axios";
 
 class UploadButton extends React.Component {
 
+    constructor (props) {
+        super(props)
+        this.state = {
+            invalidInput: false
+        }
+    }
+
     username = 'image-extract-info-user';
     password = 'KA#$DlAQw^7d2eFOMetdd';
 
@@ -42,9 +49,18 @@ class UploadButton extends React.Component {
     }
 
     render() {
-        return <div id="upload-btn">
-            <input type="submit" value="Upload" onClick={this.processImage}/>
-        </div>
+        if ((this.props.image !== null) && 
+            (this.props.selectedOptions.url == true || 
+                this.props.selectedOptions.text == true ||
+                this.props.selectedOptions.detect_language == true    
+            )) {
+            return <div id="upload-btn-wrapper">
+                <div id="upload-btn">
+                    <input type="submit" value="Upload" onClick={this.processImage}/>
+                </div>
+            </div>    
+        }
+        
     }
 }
 

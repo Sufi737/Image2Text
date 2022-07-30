@@ -139,17 +139,36 @@
     margin: auto;
     margin-top: 20px;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
-#upload-btn {
-    width: 25%;
-    margin: auto;
+#upload-btn-wrapper {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    width: 100%;
+    margin-top: 30px;
 }
+
+#upload-btn > input {
+    height: 50px;
+    width: 100px;
+    font-size: 17px;
+    background-color: transparent;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #167866;
+    border-color: #244f47;
+}
+
+#upload-btn > input:hover{
+    color: white;
+    background-color: #3a9a88;
+    cursor: pointer;
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
+}
+
 
 input[type="checkbox"].switch_1{
     font-size: 20px;
