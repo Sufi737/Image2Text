@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
 
 import Home from './Home';
+import HowToUse from './HowToUse';
 
 class App extends React.Component{
 
@@ -11,6 +12,7 @@ class App extends React.Component{
         return <Router>
           <Routes>
               <Route exact path='/' element={<Home />} />
+              <Route exact path='/how-to-use' element={<HowToUse />} />
           </Routes>
         </Router>
     }
