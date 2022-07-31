@@ -6,7 +6,7 @@ class UploadButton extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
-            invalidInput: false
+            showLoader: false
         }
     }
 
@@ -25,6 +25,7 @@ class UploadButton extends React.Component {
     }
 
     processImage = async () => {
+        this.setState({showLoader: true})
         let jwtToken = await this.fetchJwtToken();
         let file = this.props.image
         let formData = new FormData();
@@ -41,22 +42,33 @@ class UploadButton extends React.Component {
             config
         ).then(
             (res) => {
+                this.setState({showLoader: false})
                 this.props.setResponse(res)
             }
         )
     }
 
     render() {
+        if (this.state.showLoader) {
+            return <div id="upload-btn-wrapper">
+                    <div id="loader-wrapper">
+                        <img id="loader" src="loader.gif" />
+                    </div>
+                    <div id="upload-btn">
+                        <input type="submit" value="Upload" onClick={this.processImage}/>
+                    </div>
+                </div> 
+        }
         if ((this.props.image !== null) && 
             (this.props.selectedOptions.url == true || 
                 this.props.selectedOptions.text == true ||
                 this.props.selectedOptions.detect_language == true    
             )) {
             return <div id="upload-btn-wrapper">
-                <div id="upload-btn">
-                    <input type="submit" value="Upload" onClick={this.processImage}/>
-                </div>
-            </div>    
+                    <div id="upload-btn">
+                        <input type="submit" value="Upload" onClick={this.processImage}/>
+                    </div>
+                </div> 
         }
     }
 }

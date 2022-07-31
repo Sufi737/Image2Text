@@ -32,11 +32,13 @@ public class ExtractDataFromImage implements ExtractData{
 		if (selectedOptions.get("text")) {
 			text.add(tesseractService.getTextFromImage(image));
 		}
-		if (selectedOptions.get("url") && !text.isEmpty()) {
-			urls = urlService.extractUrls(text.get(0));
+		if (selectedOptions.get("url")) {
+			String imageText = tesseractService.getTextFromImage(image);			
+			urls = urlService.extractUrls(imageText);
 		}
-		if (selectedOptions.get("detect_language") && !text.isEmpty()) {
-			detected_languages = detectLanguageService.detectLanguage(text.get(0));
+		if (selectedOptions.get("detect_language")) {
+			String imageText = tesseractService.getTextFromImage(image);
+			detected_languages = detectLanguageService.detectLanguage(imageText);
 		}
 		resultSet.put("text", text);
 		resultSet.put("url", urls);

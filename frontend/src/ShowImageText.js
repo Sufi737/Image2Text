@@ -16,6 +16,7 @@ class ShowImageText extends React.Component {
         const imageText = this.props.text
         if (imageText) {
             return <div id="image-text">
+                <p className="response-header">Image Text</p>
                 <div>
                     <textarea readOnly value={imageText}/>
                 </div>

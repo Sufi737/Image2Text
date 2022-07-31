@@ -54,6 +54,7 @@ class Home extends React.Component {
             <ShowImageText text={this.state.imageText}/>
             <ShowUrls urlList={this.state.urlList}/>
             <DetectedLanguages languages={this.state.languages}/>
+            <button id="back-btn" onClick={() => {window.location.reload(false)}}>Back</button>
           </div>
         } else {
             return (

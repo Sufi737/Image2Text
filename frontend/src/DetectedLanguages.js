@@ -8,7 +8,6 @@ class DetectedLanguages extends React.Component {
                 <p>
                     <b>The image seems to contain the following language(s):</b> {this.props.languages}
                 </p>
-                <button id="back-btn" onClick={() => {window.location.reload(false)}}>Back</button>
             </div>
         }
     }
