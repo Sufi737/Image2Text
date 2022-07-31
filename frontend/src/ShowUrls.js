@@ -10,7 +10,7 @@ class ShowUrls extends React.Component {
     render() {
         let urlList = this.props.urlList;
         if (urlList) {
-            return <table border="1px solid black">
+            return <table id="url-table" border="1px solid black">
                 <tbody>{this.props.urlList.map(this.renderRow)}</tbody>
             </table>
         }

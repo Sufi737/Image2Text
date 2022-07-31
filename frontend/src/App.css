@@ -211,8 +211,52 @@ input[type="checkbox"].switch_1:after{
 input[type="checkbox"].switch_1:checked:after{
     left: calc(100% - 1.5em);
 }
-	
-/* Switch 1 Specific Style End */
+
+#image-text textarea {
+    resize: none;
+    overflow-y: scroll;
+    height: 200px;
+    width: 70%;
+    margin-left: 15%;
+}
+
+#copy-btn {
+    height: 50px;
+    width: 100px;
+    margin-left: 45%;
+    font-size: 15px;
+    background-color: transparent;
+    border-radius: 0.5rem;
+}
+
+#copy-btn:hover {
+    cursor: pointer;
+    background-color: #20f1cb;
+}
+
+#url-table {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#language-text {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#back-btn {
+    height: 45px;
+    width: 90px;
+    font-size: 15px;
+    background-color: transparent;
+    border-radius: 0.5rem;
+}
+
+#back-btn:hover {
+    cursor: pointer;
+    background-color: #20f1cb;
+}
 
 @media screen and (max-width: 1024px) {
     #header {
@@ -311,7 +355,18 @@ input[type="checkbox"].switch_1:checked:after{
         text-align: center;
         line-height: 1.7;
     }
-      
+     
+    #image-text textarea {
+        font-size: 16px;
+    }
+
+    #url-table {
+        font-size: 16px;
+    }
+
+    #language-text {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -396,9 +451,9 @@ input[type="checkbox"].switch_1:checked:after{
     #footer {
         font-size: 12px;
         position: absolute;
-        top: 550px;
+        top: 500px;
         background-color: #ecf0f1;
-        height: 20%;
+        height: 200px;
         width: 100%;
         text-align: center;
         line-height: 1.7;
@@ -412,5 +467,41 @@ input[type="checkbox"].switch_1:checked:after{
         font-family: 'Oswald', sans-serif;
         background-color: transparent;
     }
+
+    #upload-btn > input {
+        height: 35px;
+        width: 60px;
+        font-size: 12px;
+    }
+
+    #image-text textarea {
+        height: 100px;
+        margin-top: 20px;
+        width: 90%;
+        margin-left: 10%;
+        font-size: 12px;
+    }
+
+    #copy-btn {
+        height: 35px;
+        width: 60px;
+        margin-left: 35%;
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    #url-table {
+        font-size: 12px;
+    }
+
+    #language-text {
+        margin-top: 20px;
+        font-size: 12px;
+    }
       
+    #back-btn {
+        height: 35px;
+        width: 60px;
+        font-size: 12px;
+    }
 }
