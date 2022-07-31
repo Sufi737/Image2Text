@@ -21,6 +21,10 @@ html { overflow-y: scroll; }
     margin-left: 20%;
 }
 
+.logo:hover {
+    cursor: pointer;
+}
+
 #nav {
     margin-left: 5%;
     height: 70%;
