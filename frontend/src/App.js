@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route}
 
 import Home from './Home';
 import HowToUse from './HowToUse';
+import AboutUs from './AboutUs';
 
 class App extends React.Component{
 
@@ -13,6 +14,7 @@ class App extends React.Component{
           <Routes>
               <Route exact path='/' element={<Home />} />
               <Route exact path='/how-to-use' element={<HowToUse />} />
+              <Route exact path='/about-us' element={<AboutUs />} />
           </Routes>
         </Router>
     }
