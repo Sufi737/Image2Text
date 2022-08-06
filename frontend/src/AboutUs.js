@@ -13,7 +13,7 @@ class Aboutus extends React.Component{
                 </p>
                 <br/>
                 <p>
-                    It makes use of tesseract engine which is an open source OCR library to extract text data from an image. You may learn more about tesseract engine <a href="https://github.com/tesseract-ocr/tesseract#about">here</a>
+                    It makes use of Free OCR API to extract text data from an image. You may learn more about tesseract engine <a href="https://ocr.space/OCRAPI">here</a>
                 </p>
                 <br/>
                 <p>
