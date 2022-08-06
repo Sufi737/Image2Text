@@ -7,3 +7,10 @@ spring:
       
 logging:
    file.name: ${HOME}/spring-boot-project/image-discern/logs/system.log
+   
+freeOcrApiUrl: https://api.ocr.space/parse/image
+apiKey: K83679304488957
+
+
+server:
+   port : 8080
