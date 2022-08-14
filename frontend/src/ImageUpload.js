@@ -3,6 +3,7 @@ import React from "react";
 const DragDropFile = ({setImage}) => {
 
     const [dragActive, setDragActive] = React.useState(false);
+    const [filename, setFilename] = React.useState("No image uploaded");
 
     const inputRef = React.useRef(null);
   
@@ -31,6 +32,8 @@ const DragDropFile = ({setImage}) => {
         e.preventDefault();
         if (e.target.files && e.target.files[0]) {
             let file = e.target.files[0]
+            console.log(file.name)
+            setFilename(file.name)
             setImage(file)
         }
     };
@@ -47,6 +50,7 @@ const DragDropFile = ({setImage}) => {
                 <div>
                     <p>Drag and drop your file here or</p>
                     <button className="upload-button" onClick={onButtonClick}>Upload Image</button>
+                    <div id="filename">{filename}</div>
                 </div> 
                 </label>
                 { dragActive && <div id="drag-file-element" onDragEnter={handleDrag} onDragLeave={handleDrag} onDragOver={handleDrag} onDrop={handleDrop}></div> }
