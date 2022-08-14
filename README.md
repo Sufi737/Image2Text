@@ -7,10 +7,13 @@ The following features are provided:
 3. Detect the languages present in the image
 
 ## How to use
-Step 1: You will be presented with a screen to upload the image. Upload the image for which you want to extract information from.
+### Step 1: You will be presented with a screen to upload the image. Upload the image for which you want to extract information from.
 ![Step 1](frontend/public/step1.png?raw=true)
-Step 2: Once the image is uploaded select one of the options provided: extract text, extract URLs and detect languages
+
+### Step 2: Once the image is uploaded select one of the options provided: extract text, extract URLs and detect languages
 ![Step 2](frontend/public/step2.png?raw=true)
-Step 3: Once image is uploaded and at least one option is selected, an Upload button should appear. Click on that button and wait for the results
+
+### Step 3: Once image is uploaded and at least one option is selected, an Upload button should appear. Click on that button and wait for the results
+
 ![Step 3](frontend/public/step3.png?raw=true)
 ![Results](frontend/public/results.png?raw=true)
