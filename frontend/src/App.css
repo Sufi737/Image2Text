@@ -543,4 +543,8 @@ input[type="checkbox"].switch_1:checked:after{
     #loader-wrapper {
         height: 1000px;
     }
+
+    #filename {
+        font-size: 8px;
+    }
 }
