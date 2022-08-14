@@ -24,6 +24,11 @@ const DragDropFile = ({setImage}) => {
         setDragActive(false);
         if (e.dataTransfer.files && e.dataTransfer.files[0]) {
             let file = e.dataTransfer.files[0]
+            if (file.type != "image/png" && file.type !="image/jpeg" && file.type != "image/jpg") {
+                setFilename("The uploaded file type is not supported. Make sure you are uploading an image")
+            } else {
+                setFilename(file.name)
+            }
             setImage(file)
         }
     };
@@ -32,8 +37,11 @@ const DragDropFile = ({setImage}) => {
         e.preventDefault();
         if (e.target.files && e.target.files[0]) {
             let file = e.target.files[0]
-            console.log(file.name)
-            setFilename(file.name)
+            if (file.type != "image/png" && file.type !="image/jpeg" && file.type != "image/jpg") {
+                setFilename("The uploaded file type is not supported. Make sure you are uploading an image")
+            } else {
+                setFilename(file.name)
+            }
             setImage(file)
         }
     };
